@@ -1,0 +1,80 @@
+#include<stdlib.h>
+#include<stdio.h>
+struct node
+{
+
+ int data;
+ struct node *next;
+};
+
+main()
+{
+ int i=1,a=1,b;
+ struct node *newnode,*temp,*head=0,*temp2;
+ while(a)
+  {
+
+
+ printf("enter data for %d node=",i);
+ newnode=(struct node *)malloc(sizeof(struct node));
+ newnode->next=0;
+ scanf("%d",&newnode->data);
+
+ printf("want to add more node enter 1 for yes 0 for no");
+ scanf("%d",&a);
+if(head==0)
+{
+temp=head=newnode;
+}
+else{
+ temp->next=newnode;
+ newnode->next=0;
+ temp=newnode;
+}
+}
+
+temp=head;
+while(temp!=0)
+{
+
+ printf("%d\t",temp->data);
+ temp=temp->next;
+
+}
+
+printf("\nentering data after a given point of info\n");
+
+   printf("enter data for whcich you want to add a node after that");
+   scanf("%d",&b);
+   newnode=(struct node *)malloc(sizeof(struct node));
+  printf("enter data for that node");
+  scanf("%d",&newnode->data);
+   temp=head;
+   while(b!=temp->data)
+   {
+
+    temp=temp->next;
+   }
+   if(temp->next==0)
+   {
+    temp->next=newnode;
+    newnode->next=0;
+   }
+   else
+   {
+      temp2=temp->next;
+   temp->next=newnode;
+   newnode->next=temp2;
+   }
+
+
+
+   temp=head;
+   while(temp!=0)
+   {
+    printf("%d\t",temp->data);
+    temp=temp->next;
+   }
+
+
+}
