@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<conio.h>
+struct node
+{
+ int data;
+ struct node *next;
+};
+main()
+{
+ struct node *temp,*head=0,*newnode;
+
+ int a=1;
+ while(a)
+ {
+
+
+ printf("enter data ");
+ newnode=(struct node *)malloc(sizeof(struct node));
+ scanf("%d",&newnode->data);
+ if(head==0)
+ {
+
+  temp=head=newnode;
+
+ }
+ else
+ {
+  temp->next=newnode;
+temp=newnode;
+ }
+
+printf("want to moerer");
+ scanf("%d",&a);
+ }
+
+
+
+  printf("want to enter data at begin");
+ newnode=(struct node *)malloc(sizeof(struct node));
+ scanf("%d",&newnode->data);
+ newnode->next=head;
+ head=newnode;
+
+
+temp->next=head;
+
+ temp=head;
+ do
+ {
+
+  printf("%d\n",temp->data);
+  temp=temp->next;
+ }
+while(temp!=head);
+
+}
