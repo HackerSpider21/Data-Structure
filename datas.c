@@ -41,6 +41,8 @@ int main()
 	scanf("%d",&a);
 	
     }
+
+    
     newnode->next=0;  // last node->next is 0
     
 
