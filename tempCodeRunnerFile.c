@@ -1,0 +1,61 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+    struct node *previous;
+};
+
+int main()
+{
+    int a = 1;
+    int d = 0;
+    struct node *temp, *head = 0, *newnode;
+    struct node *templast;
+    while (a)
+    {
+
+        printf("enter your data");
+        newnode = (struct node *)malloc(sizeof(struct node));
+        scanf("%d", &newnode->data);
+        newnode->next = 0;
+        if (head == 0)
+        {
+
+            temp = head = newnode;
+
+            newnode->previous = 0;
+        }
+
+        else
+        {
+            temp->next = newnode;
+            newnode->previous = temp;
+            temp = newnode;
+        }
+
+        printf("want to enter more data");
+        scanf("%d", &a);
+    }
+
+    temp = head;
+    while (temp != 0)
+    {
+        d++;
+        printf("%d\n", temp->data);
+        templast = temp; // for printing the reverse of node
+        temp = temp->next;
+    }
+
+    printf("now reverse of node\n");
+    temp = templast;
+    while (temp != 0)
+    {
+        d++;
+        printf("%d\n", temp->data);
+
+        temp = temp->previous;
+    }
+}
